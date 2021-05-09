@@ -1,8 +1,11 @@
 <?php
+
 session_start();
-unset($_SESSION['id']);
-unset($_SESSION['username']);
-unset($_SESSION['email']);
-unset($_SESSION['verify']);
-header("location: login.php");
+
+// Unset all of the session variables.
+$_SESSION = array();
+
+// Finally, destroy the session.
 session_destroy();
+
+header("location: login.php");
