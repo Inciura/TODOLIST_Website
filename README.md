@@ -1,7 +1,7 @@
 # TODOLIST_Website
-TODOLIST PHP website with a login,e-mail confirmation
+Made a TODOLIST PHP website with a login,e-mail confirmation from a tutorial
 
-Fixed bugs from tutorial 
+Fixed bugs from tutorial
 
 sources:
 https://codewithawa.com/posts/user-registration-and-email-verification-php-and-mysql
