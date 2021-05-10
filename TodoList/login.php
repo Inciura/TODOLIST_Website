@@ -1,4 +1,10 @@
 <?php include 'controllers/authController.php' ?>
+<?php
+// redirect user to index page if they're already logged in
+if (!empty($_SESSION['id'])) {
+    header('location: index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -21,11 +21,11 @@ function sendVerificationEmail($userEmail, $token)
       <style>
         .wrapper {
           padding: 20px;
-          color: #444;
+          color: #444 !important;
           font-size: 1.3em;
         }
         a {
-          background: #592f80;
+          background: #2e78ff;
           text-decoration: none;
           padding: 8px 15px;
           border-radius: 5px;

@@ -34,9 +34,9 @@ if (empty($_SESSION['id'])) {
           ?>
         </div>
         <?php endif;?>
-
+      
         <h4>Welcome, <?php echo $_SESSION['username']; ?></h4>
-        <a href="logout.php" style="color: red">Logout</a>
+        
         <?php if (!$_SESSION['verified']): ?>
           <div class="alert alert-warning alert-dismissible fade show" role="alert">
             You need to verify your email address!
@@ -46,8 +46,9 @@ if (empty($_SESSION['id'])) {
             <strong><?php echo $_SESSION['email']; ?></strong>
           </div>
         <?php else: ?>
-          <button class="btn btn-lg btn-primary btn-block">I'm verified!!!</button>
+          <?php include "todolist.html" ?>
         <?php endif;?>
+        <a href="logout.php" style="color: red">Logout</a>
       </div>
     </div>
   </div>
