@@ -7,5 +7,7 @@ sources:
 https://codewithawa.com/posts/user-registration-and-email-verification-php-and-mysql
 https://stackoverflow.com/questions/3512507/proper-way-to-logout-from-a-session-in-php
 
+include html to another html:
+https://css-tricks.com/the-simplest-ways-to-handle-html-includes/
 
-Inciura/TODOLIST project frontend will be added with save and load from server feature
+Save and load from server features will be added
