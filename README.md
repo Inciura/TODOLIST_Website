@@ -19,7 +19,7 @@ https://www.php.net/manual/en/language.operators.string.php
 - how to hide a div in javascript:
 https://stackoverflow.com/questions/820951/hide-div-after-a-few-seconds
 
-Changes in frontend (only in this project, not added into https://github.com/Inciura/TODO-LIST):
+Changes in frontend:
 - add an item on enter
 - added save to local storage on every action
 - added welcome message fading
