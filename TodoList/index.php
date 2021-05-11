@@ -12,11 +12,12 @@ if (empty($_SESSION['id'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
   <link rel="stylesheet" href="main.css">
-  <title>User verification system PHP</title>
+  <title>Organiser</title>
 </head>
 
 <body>
@@ -26,7 +27,7 @@ if (empty($_SESSION['id'])) {
 
         <!-- Display messages -->
         <?php if (isset($_SESSION['message'])): ?>
-        <div class="alert <?php echo $_SESSION['type'] ?>">
+        <div id='alert-message' class="alert <?php echo $_SESSION['type'] ?>">
           <?php
             echo $_SESSION['message'];
             unset($_SESSION['message']);
@@ -35,8 +36,6 @@ if (empty($_SESSION['id'])) {
         </div>
         <?php endif;?>
       
-        <h4>Welcome, <?php echo $_SESSION['username']; ?></h4>
-        
         <?php if (!$_SESSION['verified']): ?>
           <div class="alert alert-warning alert-dismissible fade show" role="alert">
             You need to verify your email address!

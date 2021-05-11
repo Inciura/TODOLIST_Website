@@ -18,14 +18,14 @@ inputField.addEventListener("keydown", function (e) {
     }
 });
 
-function clearInput(){
+function clearInput() {
     toDoEntryBox.value = "";
     toDoEntryBox.focus();
 }
 
 function newToDoItem(itemText, completed) {
     if (itemText.length != 0) {
-        
+
         var toDoItem = document.createElement("li");
         var toDoText = document.createTextNode(itemText);
         toDoItem.appendChild(toDoText);
@@ -43,6 +43,7 @@ function addToDoItem() {
     var itemText = toDoEntryBox.value;
     newToDoItem(itemText, false);
     toDoEntryBox.value = "";
+    saveList();
 }
 
 function toggleToDoItemState() {
@@ -52,6 +53,7 @@ function toggleToDoItemState() {
         this.classList.add("completed");
     }
 
+    saveList();
     toDoEntryBox.focus();
 }
 
@@ -62,6 +64,7 @@ function clearCompletedToDoItems() {
         completedItems.item(0).remove();
     }
 
+    saveList();
     toDoEntryBox.focus();
 }
 
@@ -71,7 +74,8 @@ function emptyList() {
     while (toDoItems.length > 0) {
         toDoItems.item(0).remove();
     }
-    
+
+    saveList();
     toDoEntryBox.focus();
 }
 
@@ -81,6 +85,7 @@ var toDoInfo = {
 };
 
 function saveList() {
+    //todo: do saving to DB, remove saving to localStorage
     var toDos = [];
 
     for (var i = 0; i < toDoList.children.length; i++) {
@@ -99,6 +104,7 @@ function saveList() {
 }
 
 function loadList() {
+    //todo: do loading from DB, remove loading from localStorage
     if (localStorage.getItem("toDos") != null) {
         var toDos = JSON.parse(localStorage.getItem("toDos"));
 
@@ -107,6 +113,11 @@ function loadList() {
             newToDoItem(toDo.task, toDo.completed);
         }
     }
+
+    setTimeout(function () {
+        $('#alert-message').fadeOut('fast');
+    }, 3000); //remove alert message after 3 seconds
+
 }
 
 loadList();

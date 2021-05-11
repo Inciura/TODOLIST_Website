@@ -86,7 +86,7 @@ if (isset($_POST['login-btn'])) {
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['verified'] = $user['verified'];
-                $_SESSION['message'] = 'You are logged in!';
+                $_SESSION['message'] = 'Welcome, ' . $_SESSION['username'] . '!';
                 $_SESSION['type'] = 'alert-success';
                 header('location: index.php');
                 exit(0);
